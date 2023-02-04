@@ -61,7 +61,7 @@ int main() {
   system(cmd7.c_str());
 
   // Execute sudo ./sevtool –-ofolder . –-validate_guest_report
-  std::string cmd8 = "sudo ./sevtool –-ofolder . –-validate_guest_report";
+  std::string cmd8 = "sudo ./sevtool --ofolder . --validate_guest_report";
   FILE* pipe = popen(cmd8.c_str(), "r");
 
   // Read the output of the command and confirm it was printed
