@@ -1,4 +1,4 @@
-## AMD SEV_SNP Report
+## Use AMD SEV_SNP Report
 The AMD CPU may offer cryptographically signed evidence of SEV-SNP feature enabling through a SEV-SNP report. This is critical evidence in validating the VM's confidentiality.
 
 To construct a VCEK (Versioned Chip Endorsement Key), the version numbers of all TCB components are coupled with a fused secret termed the Chip Endorsement Key in SEV-SNP. It is a private ECDSA key that is distinct to each AMD processor running a certain TCB version. This VCEK is used for SEV-SNP report signing.
@@ -57,7 +57,7 @@ Note: Once the VCEK cert and SNP report are available, the steps below can be do
 ```
 sudo ./sevtool --ofolder <location of vcek.pem & guest_report.bin> --validate_guest_report
 ```
-![snp1.png](./Images/snp1.PNG)
+![snp2.png](./Images/snp2.PNG)
 If you see the above output, it means that the SNP report is valid, and that HCL has cryptographically verified that it is running on a genuine AMD processor and that SNP is enabled for confidentiality on this processor.
 
 It is important to note that the SNP report only certifies/measures the HCL (Microsoft firmware)+ UEFI binary. You will not be able to generate arbitrary SNP reports by directly calling hardware APIs
